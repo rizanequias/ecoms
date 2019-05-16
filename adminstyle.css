@@ -1,0 +1,21 @@
+
+#adminnavbar{
+	margin:25px;
+	padding: 5px;
+}
+
+#admincon{
+	margin:25px;
+	padding: 5px;
+}
+
+#adminform{
+	border: 2px solid black;
+	margin-left:120px;
+	margin-right: 0px;
+	padding: 10px;
+	width: 500px;
+}
+#butcon{
+	margin: 5px;
+}
