@@ -51,18 +51,22 @@ if(isset($_POST['Create'])){
 			
 		<table class="adminTable table d-flex justify-content-center table table-border table-hover col-lg-6">	
 			<tr>
-				<th>Admin ID</th>
+
+				<th>Delete</th>
 				<th>Admin Lastname</th>
 				<th>Admin Firstname</th>
 				<th>Admin Email</th>
 				<th>Admin Username</th>
 				<th>Admin Password</th>
-				<th>Delete</th>	
+
+
+				
 				<?php
 						adminUser();
-
+	
 
 					?>
+
 			</tr>
 		</table>
 		
@@ -97,10 +101,10 @@ if(isset($_POST['Create'])){
 
 				<div class="container" id="butcon">
 				<div class="row d-flex justify-content-around">
-					<input  type="submit" name="Create" value="CREATE" btn-primary> 
-					<input  type="submit" name="Read" value="READ" btn-primary > 
-					<input  type="submit" name="Update" value="UPDATE" btn-primary> 
-					<input  type="submit" name="Delete" value="DELETE" btn-primary> 
+					<input  type="submit" name="Create" value="CREATE" class="btn btn-primary"> 
+					<input  type="submit" name="Read" value="READ" class="btn btn-primary" > 
+					<input  type="submit" name="Update" value="UPDATE" class="btn btn-primary"> 
+				 
 				</div>
 				</div>
 				
