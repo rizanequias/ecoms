@@ -1,0 +1,51 @@
+/*font-family: 'Saira Semi Condensed', sans-serif;
+font-family: 'Yeon Sung', cursive;
+font-family: 'Cabin Sketch', cursive;
+font-family: 'Coming Soon', cursive;
+font-family: 'Gruppo', cursive;
+
+*/
+
+body{
+	background-color: black;
+}
+
+#row1{
+	margin: 100px;
+}
+
+#itemtext{
+
+	font-size: 10px;
+	font-family: 'Saira Semi Condensed', sans-serif;
+	color: red;
+	
+}
+
+#datatext{
+	font-size: 10px;
+	font-family: 'Saira Semi Condensed', sans-serif;
+/*	color: white;*/
+	
+}
+
+#sec1{
+	background-color: black;
+}
+#div2{
+	margin-left: 150px;
+}
+
+#rowitem{
+	height: 25px;
+}
+
+
+
+#imgitm{
+	height: 100px;
+	width: 190px;
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-left: 4px;
+}

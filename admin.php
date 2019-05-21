@@ -6,7 +6,14 @@ if(isset($_POST['Create'])){
 
 	adminCrt();
 }
+
+
+if(isset($_POST['Read'])){
+
+	adminRead();
+}
 ?>
+
 
 
 <!DOCTYPE html>
@@ -52,19 +59,18 @@ if(isset($_POST['Create'])){
 		<table class="adminTable table d-flex justify-content-center table table-border table-hover col-lg-6">	
 			<tr>
 
-				<th>Delete</th>
+				<th></th>
+
+				<th>Admin ID</th>
 				<th>Admin Lastname</th>
 				<th>Admin Firstname</th>
 				<th>Admin Email</th>
 				<th>Admin Username</th>
 				<th>Admin Password</th>
-
-
 				
 				<?php
 						adminUser();
 	
-
 					?>
 
 			</tr>

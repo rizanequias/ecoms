@@ -10,8 +10,7 @@ include 'db.php';
 function adminUser(){
 	global $connection;
 
-
-	if(isset($_GET['adminDelete'])){
+		if(isset($_GET['adminDelete'])){
 		$delAdmin = "DELETE FROM admin where admin_id = {$_GET["adminDelete"]}";
 		$connection->query($delAdmin);
 	}
@@ -20,7 +19,7 @@ function adminUser(){
 	$admintb = "SELECT admin_id,admin_lastname,admin_firstname,admin_middlename,admin_email,admin_username,admin_password, FROM admin";
 	$query = mysqli_query($connection,$admintb);
 
-
+	
 	$query = "SELECT * FROM admin";
 	$result = mysqli_query($connection, $query);
 
@@ -29,37 +28,31 @@ function adminUser(){
 	}
 	while ($row = mysqli_fetch_array($result)){
 		
+		$admin_id = $row ['admin_id'];
 		$admin_lastname = $row ['admin_lastname'];
 		$admin_firstname = $row ['admin_firstname'];
 		$admin_email = $row ['admin_email'];
 		$admin_username = $row ['admin_username'];
 		$admin_password = $row ['admin_password'];
-		$admin_id = $row ['admin_id'];
 		
-	
-		
-
-		echo "
-			<tr>
+		echo "<tr>
 			<td>
 				<form>
-					<input type = \"hidden\" name = \"adminDelete\" value = \"{$admin_id}\" />
-					<input type = 'submit' value='DELETE' class='btn btn btn-outline-danger'></input>
+					<input type = \"hidden\" name = \"adminDelete\" value = \"{$admin_id}\" >
+					<input type = 'submit' value='DELETE' class='btn btn btn-outline-danger'>
 				</form>
 			</td>
-			
-			
+				<td>{$admin_id}</td>
 				<td>{$admin_lastname}</td>
 				<td>{$admin_firstname}</td>
 				<td>{$admin_email}</td>
 				<td>{$admin_username}</td>
 				<td>{$admin_password}</td>
-				
 			  </tr>
 			  ";
 	}
-}
 
+}
 //create button 
 	function adminCrt(){
 		global $connection;
@@ -79,9 +72,35 @@ function adminUser(){
 		}else{
 			die("query Failed");
 		}
+			}
 		
 		
+	
+
+	function adminRead(){
+		global $connection;
+
+		$query = "SELECT * FROM admin(admin_lastname,admin_firstname,admin_email,admin_username,admin_password) 
+		VALUES ('$Lastname','$Firstname','$Email','$UserName','$Password')";
+
+		$result = mysqli_query($connection, $query);
+
+			$Lastname = $_POST["Lastname"];
+			$Firstname = $_POST["Firstname"];
+			$Email = $_POST["Email"];
+			$UserName = $_POST["UserName"];
+			$Password = $_POST["Password"];
+
+			echo "<option value='{$id}'>{$text}</option>";
 	}
+
+
+
+
+
+
+
+	
 
 	// function adminDel(){
 	// 	global $connection;
