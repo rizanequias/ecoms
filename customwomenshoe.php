@@ -2,22 +2,18 @@
 include "function.php"; 
 include "functioncus.php"; 
 require "db.php"; 
-
 if(isset($_POST['adminTable'])){
-
   showCusData();
 }
-
 if(isset($_POST['submit'])){
-
   login();
 }
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
- <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+ <meta charset="utf-8" />
+   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
   <meta name="viewport" content="width=device-width" />
 
   <!--     Fonts and icons     -->
@@ -39,6 +35,11 @@ if(isset($_POST['submit'])){
   <link rel="stylesheet" type="text/css" href="customenstyle.css">
   <link rel="stylesheet" type="text/css" href="customstyle.css">
   <link rel="stylesheet" type="text/css" href="loginform.css">
+
+  
+
+
+  <link rel="stylesheet" type="text/css" href="style.css">
 
   
 
@@ -89,20 +90,22 @@ if(isset($_POST['submit'])){
           <p class="dropdown-item ">FAIRVIEW TERRACES</P>
           
       </li>
-      <li class="nav-item">
+
+       <li class="nav-item">
         <a class="nav-link text-white" href="customelogin.php">LOG OUT</a>
       </li>
-    
+      
     </ul>
-
     
-
+          
+    
+  <div>
 </nav>
 
 
   <div class="section section-basic " id="sec1">
         <div class="d-flex justify-content-around flex-wrap "id="div2">
-            <?php showCusData(); ?> 
+            <?php showCusWoData(); ?> 
         </div>
         
    
@@ -111,9 +114,6 @@ if(isset($_POST['submit'])){
             <!-- Blog Entries Column
             
 </body>
-
-
-
       <!--   	<div class="section" id="carousel">
         		<div class="container">
         			<div class="row justify-content-center">
@@ -177,7 +177,6 @@ if(isset($_POST['submit'])){
 <script>
 // Get the modal
 var modal = document.getElementById('id01');
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {

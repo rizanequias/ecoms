@@ -8,9 +8,9 @@ if(isset($_POST['Create'])){
 }
 
 
-if(isset($_POST['Read'])){
+if(isset($_POST['update'])){
 
-	adminRead();
+	AdminUP();
 }
 ?>
 
@@ -39,10 +39,10 @@ if(isset($_POST['Read'])){
 					<ul class="navbar-nav mr-auto">
 						<div class="d-flex justify-content-between">	
 						<li class="	nav-item active">
-							<a class="nav-link" href="#"><span=>	ADMIN</span></a>
+							<a class="nav-link" href="admin.php"><span=>	ADMIN</span></a>
 						</li>
 						<li class="	nav-item active">
-							<a class="nav-link" href="#">CUSTOMER</a>
+							<a class="nav-link" href="customad.php">COUSTUMER</a>
 						</li>
 						<li class="	nav-item active">
 							<a class="nav-link" href="#">PRODUCT</a>
@@ -78,6 +78,7 @@ if(isset($_POST['Read'])){
 		
 		<div class="col-lg-6">
 		<form method="post" id="adminform">
+			<h5>CREATE</h5>
 
 			<div class="row form-group"  >
 
@@ -108,15 +109,54 @@ if(isset($_POST['Read'])){
 				<div class="container" id="butcon">
 				<div class="row d-flex justify-content-around">
 					<input  type="submit" name="Create" value="CREATE" class="btn btn-primary"> 
-					<input  type="submit" name="Read" value="READ" class="btn btn-primary" > 
-					<input  type="submit" name="Update" value="UPDATE" class="btn btn-primary"> 
+				 
 				 
 				</div>
-				</div>
-				
+				</div>			
 
-				
-			
+		</form>
+
+		<!-- //UPDATE -->
+		<form method="post" id="adminform">
+			<h5>UPDATE</h5>
+			<h6>Select ID to Update</h6>
+			<select name="admin_id" id=""> <?php showData1(); ?></select>
+			<div class="row form-group"  >
+
+
+
+				<div class="col-sm-6">
+					<label for="Lastname" class="col-sm-2 col-form-label">Lastname</label>
+					<br>
+					<input type="text"  class="form-control" name="admin_lastname" id="Lastname" required>
+				</div>
+
+				<div class="col-sm-6" >
+					<label class="col-sm-2 col-form-label">Firstname</label>
+					<input type="text"  class="form-control " name="admin_firstname" id="Firstname" required>
+				</div>
+
+				</div>
+
+				<div>
+					<label class="col-sm-2 col-form-label">Email</label>
+					<input type="Email"  class="form-control " name="admin_email" id="Email" >
+
+					<label class="col-form-label">Username</label>
+					<input type="text" class="form-control " name="admin_username"id="UserName" value="">	
+							
+					<label class="col-sm-2 col-form-label">Password</label>
+					<input type="text"  class="form-control " name="admin_password" id="Password" value="">
+				</div>
+
+				<div class="container" id="butcon">
+				<div class="row d-flex justify-content-around">
+				 
+					<input  type="submit" name="update" value="UPDATE" class="btn btn-primary">
+
+				 
+				</div>
+				</div>			
 
 		</form>
 		</div>

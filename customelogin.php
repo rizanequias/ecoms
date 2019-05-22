@@ -1,3 +1,16 @@
+<?php 
+include "function.php"; 
+require "db.php";
+
+
+if(isset($_POST['login'])){
+
+	login();
+}
+  ?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +36,9 @@
   <link href="https://cdn.rawgit.com/creativetimofficial/now-ui-kit/2e8e665f/assets/demo/demo.css" rel="customstyle.css">
 
 
+
   <link rel="stylesheet" type="text/css" href="customstyle.css">
+  <link rel="stylesheet" type="text/css" href="loginform.css">
 
   
 
@@ -47,21 +62,18 @@
 <body>
    
 <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">ECOMS</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="loginform.php">LOGIN<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shoes</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item text-dark display-4" href="custommenshoe.php" >MEN</a>
-          <p class="dropdown-item text-dark">WOMEN</P></div>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="signup.php">SIGN-UP<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -76,10 +88,7 @@
       </li>
       
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    
   </div>
 </nav>
 

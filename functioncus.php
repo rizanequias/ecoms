@@ -11,7 +11,56 @@ include "db.php";
 
 
 
-function showCusData(){
+function showCusWoData(){
+	global $connection;
+
+	$query = "SELECT womenitem_id ,womenitem_code, womenitem_name, womenitem_color, womenitem_type, womenitem_img FROM womenitem ";
+	$result = mysqli_query($connection,$query);
+	
+
+
+	if(!$query){
+		die("not connected"). mysql_error(($connection));
+	}
+	while ($row = mysqli_fetch_array($result)){
+		
+		$itemID = $row ['womenitem_id'];
+		$itemcode = $row ['womenitem_code'];
+		$itemname = $row ['womenitem_name'];
+		$itemcolor = $row ['womenitem_color'];
+		$itemtype = $row ['womenitem_type'];
+		$itemimg = $row ['womenitem_img'];
+
+		echo "
+		
+
+		
+	
+			<div class='card border border-default bg-transparent text-white ' style='width:200px; height:250px;'>
+ 		 		<img class='img-responsive' id='imgitm' src='{$itemimg}'; alt=''>
+ 		 		
+ 		 		<div class='col-lg-12' >
+ 		 			<div class='row  ' id='rowitem' >
+ 		 				<p class='card-tile' id='itemtext'>N A M E </p><br><p id='datatext'>: {$itemname}</p></p>
+ 		 			</div>
+ 		 			<div class='row  ' id='rowitem'>
+ 		 				<p class='card-tile' id='itemtext'>C O L O R</p><p id='datatext'>: {$itemcolor}</p></p>
+ 		 			</div>
+ 		 			<div class='row ' id='rowitem'>
+ 		 				<p class='card-tile' id='itemtext'>T Y P E</p><p id='datatext'>: {$itemtype}</p></p>	 			
+						
+ 		 	</div> 	
+ 		 	</div>
+ 		 	</div>
+ 		 		
+			  ";
+		}
+	}
+
+
+
+
+	function showCusData(){
 	global $connection;
 
 	$query = "SELECT menitem_id ,menitem_code, menitem_name, menitem_color, menitem_type, menitem_img FROM menitem ";
@@ -59,33 +108,6 @@ function showCusData(){
 
 
 	// LOGIN Button Function
-
-	function login(){
-		global $connection;
-
-		$username = $_POST['c_username'];
-		$password = $_POST['c_pass'];
-
-		if($username == username ){
-		$query = "SELECT custom_id FROM customer WHERE custom_username ='username' , custom_password ='password' ";
-		$result= mysqli_query($connection,$query);
-		$x = mysqli_fetch_array($result,MYSQLI_ASSOC);
-		$num = mysqli_num_rows($result);
-
-
-		if($num == 1) {
- 		 $_SESSION['username'] = $username;
- 		 header('location:customelogin.php');
-
-		} else {
-  header('location:login.php');
-  
-}
-
-}
-
-
-	}
 
 
 ?>

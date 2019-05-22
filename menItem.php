@@ -17,7 +17,12 @@ if(isset($_POST['submit'])){
 <!DOCTYPE html>
 <html>
 <head>
- <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+ <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>Welcome to Ecoms </title>
+
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
   <meta name="viewport" content="width=device-width" />
 
   <!--     Fonts and icons     -->
@@ -37,7 +42,6 @@ if(isset($_POST['submit'])){
 
 
   <link rel="stylesheet" type="text/css" href="customenstyle.css">
-  <link rel="stylesheet" type="text/css" href="customstyle.css">
   <link rel="stylesheet" type="text/css" href="loginform.css">
 
   
@@ -64,19 +68,22 @@ if(isset($_POST['submit'])){
 
 
    
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-  <a class="navbar-brand" href="#">ECOMS</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav mr-auto d-flex">
       <li class="nav-item">
-        <a class="nav-link text-white" href="custommenshoe.php">MEN SECTION</a>
+        <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="customwomenshoe.php">WOMEN SECTION</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shoes</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <P class="dropdown-item text-dark display-4">MEN</P>
+          <p class="dropdown-item text-dark">WOMEN</P></div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -89,20 +96,16 @@ if(isset($_POST['submit'])){
           <p class="dropdown-item ">FAIRVIEW TERRACES</P>
           
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-white" href="customelogin.php">LOG OUT</a>
-      </li>
-    
+      
     </ul>
-
-    
-
+</div>
 </nav>
 
 
   <div class="section section-basic " id="sec1">
         <div class="d-flex justify-content-around flex-wrap "id="div2">
             <?php showCusData(); ?> 
+             <     
         </div>
         
    
